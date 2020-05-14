@@ -8,7 +8,7 @@ Once installed, in a terminal you can set it up in a directory with the command
 After that you can clone the repository normally.
 
 Documentation for the project is at 
-https://moonwards-docs.readthedocs.io/en/latest/index.html
+https://docs.moonwards.com
 
 
     
