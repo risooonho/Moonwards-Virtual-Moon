@@ -26,7 +26,7 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Third_Gallery/Third_Gallery.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/MoonTown/Constructs/Spaceport/Spaceport.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/MoonTown/Constructs/Center_Atrium/Center_Atrium.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Assets/MoonTown/Models/Radio_Dish_Satellites/Radio_Dish_Satellites.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/MoonTown/Models/Audio_Tour_Markers/Audio_Tour_Marker_Indoor.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/MoonTown/Constructs/Fifth_Gallery/Fifth_Gallery.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Assets/MoonTown/Models/Molten_Soil_Reactor/Molten_Soil_Reactor.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Assets/MoonTown/Models/Flywheel_Towers/Flywheel_Tower.tscn" type="PackedScene" id=30]
@@ -43,71 +43,42 @@ shadow_enabled = true
 shadow_color = Color( 0.498039, 0.498039, 0.498039, 1 )
 directional_shadow_max_distance = 400.0
 
-[node name="Airlock_Bay" parent="Lalande_MoonTown/Empty_AirlockBay" index="0" instance=ExtResource( 3 )]
+[node name="Audio-Tour-Markers" type="Spatial" parent="." index="1"]
 
-[node name="First_Atrium" parent="Lalande_MoonTown/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
+[node name="Audio_Tour_Marker_Indoor" parent="Audio-Tour-Markers" index="0" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.3646, 100.258, -208.485 )
 
-[node name="Center_Atrium" parent="Lalande_MoonTown/Empty_BigAtrium" index="0" instance=ExtResource( 26 )]
+[node name="Audio_Tour_Marker_Indoor2" parent="Audio-Tour-Markers" index="1" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73065, 100.272, -181.489 )
 
-[node name="Fifth_Gallery" parent="Lalande_MoonTown/Empty_FifthGallery" index="0" instance=ExtResource( 28 )]
+[node name="Audio_Tour_Marker_Indoor3" parent="Audio-Tour-Markers" index="2" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.90144, 112.387, -168.746 )
 
-[node name="First_Gallery_Lower_MiddlePart" parent="Lalande_MoonTown/Empty_FirstGalleryLower" index="0" instance=ExtResource( 5 )]
+[node name="Audio_Tour_Marker_Indoor4" parent="Audio-Tour-Markers" index="3" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6175, 112.564, -180.035 )
 
-[node name="First_Gallery_Lower_LowerPart" parent="Lalande_MoonTown/Empty_FirstGalleryLower" index="1" instance=ExtResource( 6 )]
+[node name="Audio_Tour_Marker_Indoor5" parent="Audio-Tour-Markers" index="4" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9403, 100.387, -171.717 )
 
-[node name="First_Gallery_Lower_UpperPart" parent="Lalande_MoonTown/Empty_FirstGalleryLower" index="2" instance=ExtResource( 2 )]
+[node name="Audio_Tour_Marker_Indoor6" parent="Audio-Tour-Markers" index="5" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2385, 88.2769, -170.968 )
 
-[node name="First_Gallery_Upper" parent="Lalande_MoonTown/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
+[node name="Audio_Tour_Marker_Indoor7" parent="Audio-Tour-Markers" index="6" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1978, 82.0088, -107.549 )
 
-[node name="First_Factory" parent="Lalande_MoonTown/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
+[node name="Audio_Tour_Marker_Indoor8" parent="Audio-Tour-Markers" index="7" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -172.643, 26.0875, -195.051 )
 
-[node name="Fourth_Gallery" parent="Lalande_MoonTown/Empty_FourthGallery" index="0" instance=ExtResource( 7 )]
+[node name="Audio_Tour_Marker_Indoor9" parent="Audio-Tour-Markers" index="8" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -170.508, 24.1274, -243.228 )
 
-[node name="All_Overlays_4th_Gal_Top" parent="Lalande_MoonTown/Empty_GalleriesOuterSurface" index="0" instance=ExtResource( 31 )]
-
-[node name="Long_Dome" parent="Lalande_MoonTown/Empty_LongDome" index="0" instance=ExtResource( 18 )]
-
-[node name="Rim_Arcade" parent="Lalande_MoonTown/Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
-
-[node name="Main_Factory" parent="Lalande_MoonTown/Empty_MainHangars" index="0" instance=ExtResource( 11 )]
-
-[node name="North_Farm_Atrium" parent="Lalande_MoonTown/Empty_NorthLongAtrium" index="0" instance=ExtResource( 15 )]
-
-[node name="Nuclear_Plant" parent="Lalande_MoonTown/Empty_NuclearPlant" index="0" instance=ExtResource( 14 )]
-
-[node name="Radar_Tower" parent="Lalande_MoonTown/Empty_RadarTower" index="0" instance=ExtResource( 20 )]
-
-[node name="Rec_Hab_1" parent="Lalande_MoonTown/Empty_RecHab1" index="0" instance=ExtResource( 9 )]
-
-[node name="Second_Gallery" parent="Lalande_MoonTown/Empty_SecondGallery" index="0" instance=ExtResource( 22 )]
-
-[node name="South_Farm_Atrium" parent="Lalande_MoonTown/Empty_SouthLongAtrium" index="0" instance=ExtResource( 16 )]
-
-[node name="Spaceport" parent="Lalande_MoonTown/Empty_Spaceport" index="0" instance=ExtResource( 25 )]
-
-[node name="STEMP_Facilities" parent="Lalande_MoonTown/Empty_STEMP-Facilities" index="0" instance=ExtResource( 12 )]
-
-[node name="Teacup_Crater" parent="Lalande_MoonTown/Empty_TeacupCrater" index="0" instance=ExtResource( 23 )]
-
-[node name="Third_Gallery" parent="Lalande_MoonTown/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]
-
-[node name="Radio_Dish_Earth" parent="Lalande_MoonTown/Marker_RadioDishEarth" index="0" instance=ExtResource( 21 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-
-[node name="Radio_Dish_Earth" parent="Lalande_MoonTown/Marker_RadioDishEarth001" index="0" instance=ExtResource( 21 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-
-[node name="Radio_Dish_Earth" parent="Lalande_MoonTown/Marker_RadioDishEarth002" index="0" instance=ExtResource( 21 )]
-
-[node name="Radio_Dish_Satellites" parent="Lalande_MoonTown/SatelliteDishStand1" index="0" instance=ExtResource( 27 )]
-
-[node name="Radio_Dish_Satellites" parent="Lalande_MoonTown/SatelliteDishStand2" index="0" instance=ExtResource( 27 )]
-
-[node name="Radio_Dish_Satellites" parent="Lalande_MoonTown/SatelliteDishStand3" index="0" instance=ExtResource( 27 )]
+[node name="Lalande_85k" parent="." index="10" instance=ExtResource( 17 )]
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad001" index="0" instance=ExtResource( 33 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad002" index="0" instance=ExtResource( 33 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Boat_Radiator" parent="Marker_all_BoatRads/BoatRad003" index="0" instance=ExtResource( 33 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
@@ -199,6 +170,18 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Melt_In_Place_Station" parent="Marker_all_MIPs/Marker_MIP004" index="0" instance=ExtResource( 13 )]
 
+[node name="Marker_RadioDishEarth" parent="." index="17"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 475.644, 62.7823, -11.5285 )
+
+[node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth" index="0" instance=ExtResource( 21 )]
+
+[node name="Marker_RadioDishEarth001" parent="." index="18"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 911.615, -11.5876, 86.7956 )
+
+[node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth001" index="0" instance=ExtResource( 21 )]
+
+[node name="Radio_Dish_Earth" parent="Marker_RadioDishEarth002" index="0" instance=ExtResource( 21 )]
+
 [node name="Solar_Panel_Unit" parent="Marker_all_SolarPanels/Marker_Solar_Panel_Unit01" index="0" instance=ExtResource( 32 )]
 
 [node name="Solar_Panel_Unit" parent="Marker_all_SolarPanels/Marker_Solar_Panel_Unit02" index="0" instance=ExtResource( 32 )]
@@ -229,64 +212,110 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Solar_Panel_Unit" parent="Marker_all_SolarPanels/Marker_Solar_Panel_Unit15" index="0" instance=ExtResource( 32 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers001" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers001" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers002" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers002" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers003" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers003" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers004" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers004" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers005" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers005" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers006" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers006" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers007" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers007" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers008" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers008" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers009" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers009" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers010" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers010" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers011" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers011" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers012" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers012" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers013" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers013" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers014" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers014" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers015" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers015" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers016" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers016" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers017" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers017" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers018" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers018" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers019" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers019" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers020" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers020" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers021" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers021" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers022" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers022" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers023" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers023" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers024" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers024" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers025" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers025" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers026" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers026" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers027" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers027" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers028" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers028" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers029" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers029" index="0" instance=ExtResource( 30 )]
 
-[node name="Flywheel_Tower" parent="Marker_FlywheelTowers_Set/Marker-FlywheelTowers030" index="0" instance=ExtResource( 30 )]
+[node name="Flywheel_Tower" parent="Marker_all_FlywheelTowers/Marker-FlywheelTowers030" index="0" instance=ExtResource( 30 )]
 
-[node name="Lalande_85k" parent="." index="9" instance=ExtResource( 17 )]
+[node name="Airlock_Bay" parent="Marker_all_Constructs/Empty_AirlockBay" index="0" instance=ExtResource( 3 )]
+
+[node name="First_Atrium" parent="Marker_all_Constructs/Empty_AtriumHab" index="0" instance=ExtResource( 4 )]
+
+[node name="Center_Atrium" parent="Marker_all_Constructs/Empty_BigAtrium" index="0" instance=ExtResource( 26 )]
+
+[node name="Fifth_Gallery" parent="Marker_all_Constructs/Empty_FifthGallery" index="0" instance=ExtResource( 28 )]
+
+[node name="First_Gallery_Lower_LowerPart" parent="Marker_all_Constructs/Empty_FirstGalleryLower" index="0" instance=ExtResource( 6 )]
+
+[node name="First_Gallery_Lower_MiddlePart" parent="Marker_all_Constructs/Empty_FirstGalleryLower" index="1" instance=ExtResource( 5 )]
+
+[node name="First_Gallery_Lower_UpperPart" parent="Marker_all_Constructs/Empty_FirstGalleryLower" index="2" instance=ExtResource( 2 )]
+
+[node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
+
+[node name="First_Factory" parent="Marker_all_Constructs/Empty_FirstHangars" index="0" instance=ExtResource( 8 )]
+
+[node name="Fourth_Gallery" parent="Marker_all_Constructs/Empty_FourthGallery" index="0" instance=ExtResource( 7 )]
+
+[node name="All_Overlays_4th_Gal_Top" parent="Marker_all_Constructs/Empty_GalleriesOuterSurface" index="0" instance=ExtResource( 31 )]
+
+[node name="Long_Dome" parent="Marker_all_Constructs/Empty_LongDome" index="0" instance=ExtResource( 18 )]
+
+[node name="Rim_Arcade" parent="Marker_all_Constructs/Empty_LosPortalesTunnel" index="0" instance=ExtResource( 19 )]
+
+[node name="Main_Factory" parent="Marker_all_Constructs/Empty_MainHangars" index="0" instance=ExtResource( 11 )]
+
+[node name="North_Farm_Atrium" parent="Marker_all_Constructs/Empty_NorthLongAtrium" index="0" instance=ExtResource( 15 )]
+
+[node name="Nuclear_Plant" parent="Marker_all_Constructs/Empty_NuclearPlant" index="0" instance=ExtResource( 14 )]
+
+[node name="Radar_Tower" parent="Marker_all_Constructs/Empty_RadarTower" index="0" instance=ExtResource( 20 )]
+
+[node name="Rec_Hab_1" parent="Marker_all_Constructs/Empty_RecHab1" index="0" instance=ExtResource( 9 )]
+
+[node name="Second_Gallery" parent="Marker_all_Constructs/Empty_SecondGallery" index="0" instance=ExtResource( 22 )]
+
+[node name="South_Farm_Atrium" parent="Marker_all_Constructs/Empty_SouthLongAtrium" index="0" instance=ExtResource( 16 )]
+
+[node name="Spaceport" parent="Marker_all_Constructs/Empty_Spaceport" index="0" instance=ExtResource( 25 )]
+
+[node name="STEMP_Facilities" parent="Marker_all_Constructs/Empty_STEMP-Facilities" index="0" instance=ExtResource( 12 )]
+
+[node name="Teacup_Crater" parent="Marker_all_Constructs/Empty_TeacupCrater" index="0" instance=ExtResource( 23 )]
+
+[node name="Third_Gallery" parent="Marker_all_Constructs/Empty_ThirdGallery" index="0" instance=ExtResource( 24 )]

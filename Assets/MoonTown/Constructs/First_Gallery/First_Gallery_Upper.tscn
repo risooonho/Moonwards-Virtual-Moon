@@ -53,4 +53,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0639, -55.9659, 0.0796747 )
 omni_range = 30.8064
 omni_attenuation = 1.8025
 
-[node name="Makers_Monument" parent="First_Gallery_Upper_Roof/Marker_MakersMonument001" index="0" instance=ExtResource( 2 )]
+[node name="Makers_Monument" parent="Marker_MakersMonument001" index="0" instance=ExtResource( 2 )]
