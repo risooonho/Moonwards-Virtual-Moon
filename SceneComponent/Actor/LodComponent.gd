@@ -47,7 +47,10 @@ func _on_lod1_exited(lod_node: Node) -> void:
 func _set_lod0_dist(val: float) -> void:
 	if lod0 != null:
 		lod0.get_node("CollisionShape").scale = Vector3.ONE * val
+		lod0_max_distance = val
 
 func _set_lod1_dist(val: float) -> void:
 	if lod1 != null:
 		lod1.get_node("CollisionShape").scale = Vector3.ONE * val
+		lod1_max_distance = val
+		
