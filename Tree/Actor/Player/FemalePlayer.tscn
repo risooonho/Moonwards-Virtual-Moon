@@ -35,3 +35,5 @@ __meta__ = {
 [node name="Model" parent="." instance=ExtResource( 7 )]
 
 [node name="LodComponent" parent="." instance=ExtResource( 6 )]
+lod0_max_distance = 300.0
+lod1_max_distance = 500.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Audio_Tour_Indoor-7-between.ogg-df51231d096ee4c5845fcf0959270082.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-7-between.ogg"
+dest_files=[ "res://.import/Audio_Tour_Indoor-7-between.ogg-df51231d096ee4c5845fcf0959270082.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
