@@ -2,8 +2,8 @@ extends AComponent
 
 var last_pos: Vector3 = Vector3.ZERO
 
-export(float) var lod0_max_distance: float = 5 setget _set_lod0_dist
-export(float) var lod1_max_distance: float = 10 setget _set_lod1_dist
+export(float) var lod0_max_distance: float = 5
+export(float) var lod1_max_distance: float = 10
 
 onready var lod0: Area = $LOD0Area
 onready var lod1: Area = $LOD1Area
