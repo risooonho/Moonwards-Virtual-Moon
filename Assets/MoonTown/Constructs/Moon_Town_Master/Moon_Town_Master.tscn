@@ -46,7 +46,7 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-1.ogg" type="AudioStream" id=44]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-intro.ogg" type="AudioStream" id=45]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-10.ogg" type="AudioStream" id=46]
-[ext_resource path="res://SceneComponent/Utilities/AudioTour/AudioSphere.tscn" type="PackedScene" id=47]
+[ext_resource path="res://SceneComponent/Audio/AudioSphere/AudioSphere.tscn" type="PackedScene" id=47]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-8.ogg" type="AudioStream" id=48]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_7.ogg" type="AudioStream" id=49]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_3.ogg" type="AudioStream" id=50]
@@ -61,6 +61,8 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Outdoor_5.ogg" type="AudioStream" id=59]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
+
+
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1218, 284.159, 2804.41 )
