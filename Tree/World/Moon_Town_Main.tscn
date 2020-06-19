@@ -14,6 +14,9 @@ agent/max_slope = 69.7
 filter/filter_walkable_low_height_spans = true
 
 [node name="world" type="Spatial"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerHud" parent="." instance=ExtResource( 2 )]
 
@@ -31,4 +34,4 @@ __meta__ = {
 }
 
 [node name="1" type="Position3D" parent="SpawnPoints"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2623, 100.657, -171.324 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 737.412, 30.767, 332.481 )
