@@ -15,6 +15,10 @@ export var display_info : String = "Interactable"
 
 var owning_entity: AEntity = null
 
+func _ready() -> void :
+	collision_layer = 32768
+	collision_mask = 0
+
 func get_info() -> String :
 	#Show what the display info should be for interacting with me.
 	return display_info
