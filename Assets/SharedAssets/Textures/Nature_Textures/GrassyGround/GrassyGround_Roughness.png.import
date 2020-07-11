@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GrassyGround_Roughness.png-b4580949bb88eaeff43a4808eecbf22d.stex"
+path.s3tc="res://.import/GrassyGround_Roughness.png-b4580949bb88eaeff43a4808eecbf22d.s3tc.stex"
+path.etc2="res://.import/GrassyGround_Roughness.png-b4580949bb88eaeff43a4808eecbf22d.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/SharedAssets/Textures/Nature_Textures/GrassyGround/GrassyGround_Roughness.png"
-dest_files=[ "res://.import/GrassyGround_Roughness.png-b4580949bb88eaeff43a4808eecbf22d.stex" ]
+dest_files=[ "res://.import/GrassyGround_Roughness.png-b4580949bb88eaeff43a4808eecbf22d.s3tc.stex", "res://.import/GrassyGround_Roughness.png-b4580949bb88eaeff43a4808eecbf22d.etc2.stex" ]
 
 [params]
 
@@ -19,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
@@ -30,5 +32,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
