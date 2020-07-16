@@ -12,7 +12,7 @@ var entities_container: Node
 # Array of EntityData
 var entities: Dictionary = {}
 
-func _ready():
+func _ready() -> void:
 	world = yield(Scene.change_scene_to_async(Scene.world_scene), "scene_changed")
 	
 	world.name = "World"
@@ -45,15 +45,16 @@ puppetsync func add_player(entity_data) -> void:
 		return
 	
 	var e = Scene.PLAYER_SCENE.instance()
-	e.transform.origin = entity_data.initial_pos
 	e.name = str(entity_data.peer_id)
 	e.entity_name = str(entity_data.entity_name)
 	e.owner_peer_id = entity_data.peer_id
 	e.set_network_master(1)
+	e.enabled = true
 	entities_container.add_child(e)
-	var model = e.get_component("ModelComponent")
-	model.set_colors(entity_data.colors)
-
+	e.global_transform.origin = entity_data.initial_pos
+#	var model = e.get_component("ModelComponent")
+#	model.set_colors(entity_data.colors)
+	
 ### Networking API
 ## See if we can move this to it's own script.
 

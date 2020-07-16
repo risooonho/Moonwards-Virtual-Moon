@@ -15,18 +15,16 @@ var mouse_sensitivity: float = 0.1
 var yaw: float = 0.0
 var pitch: float = 0.0
 
-func _init().("CameraController", true):
+func _init().("Camera", true):
 	pass
 	
-func _ready():
-	if enabled == true:
-		camera.set_current(true)
+func _ready() -> void:
 	yaw = 0.0
 	pitch = 0.0
 	_update_cam_pos()
 	camera.set_as_toplevel(true)
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	var _new_rot = Vector3(deg2rad(pitch), deg2rad(yaw), 0.0)
 	camera.set_rotation(_new_rot)
 	_update_cam_pos()
@@ -55,3 +53,12 @@ func _update_cam_pos() -> void:
 func _get_cam_normal() -> Vector3:
 	return camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
 	
+func disable():
+	if get_tree().get_network_unique_id() == entity.owner_peer_id:
+		camera.set_current(false)
+	.disable()
+
+func enable():
+	if get_tree().get_network_unique_id() == entity.owner_peer_id:
+		camera.set_current(true)
+	.enable()
