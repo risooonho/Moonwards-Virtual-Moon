@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Vertical_Stairs_FG1.gltf-25a8af9e95ecdd411c831c27a5edb529.scn"
+path="res://.import/Vertical_Stairs.glb-33967c9fabd1f23a18ca0b72f52e025a.scn"
 
 [deps]
 
-source_file="res://Assets/MoonTown/Models/Vertical_Stairs/Vertical_Stairs_FG1.gltf"
-dest_files=[ "res://.import/Vertical_Stairs_FG1.gltf-25a8af9e95ecdd411c831c27a5edb529.scn" ]
+source_file="res://Assets/MoonTown/Models/Vertical_Stairs/Vertical_Stairs.glb"
+dest_files=[ "res://.import/Vertical_Stairs.glb-33967c9fabd1f23a18ca0b72f52e025a.scn" ]
 
 [params]
 

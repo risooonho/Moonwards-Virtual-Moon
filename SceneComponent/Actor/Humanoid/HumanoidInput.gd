@@ -33,7 +33,3 @@ func handle_input() -> void:
 
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool
-
-
-
-
