@@ -36,9 +36,9 @@ var is_grounded: bool
 func _process_server(_delta: float) -> void:
 	if !get_tree().network_peer:
 		return
-	rset_unreliable("srv_pos", srv_pos)
-	rset_unreliable("srv_vel", srv_vel)
-	rset_unreliable("look_dir", look_dir)
+	rset("srv_pos", srv_pos)
+	rset("srv_vel", srv_vel)
+	rset("look_dir", look_dir)
 
 func _process_client(_delta: float) -> void:
 	if !get_tree().network_peer:
@@ -47,5 +47,5 @@ func _process_client(_delta: float) -> void:
 	# Figure out a way to do that as godot doesn't have it out of the box
 	# Setgetters are an option, try to find a cleaner way.
 	if self.owner_peer_id == get_tree().get_network_unique_id():
-		rset_unreliable_id(1, "input", input)
-		rset_unreliable_id(1, "look_dir", look_dir)
+		rset_id(1, "input", input)
+		rset_id(1, "look_dir", look_dir)

@@ -36,38 +36,33 @@ func _ready() -> void :
 func _ready_deferred() -> void :
 	if grab_focus_at_ready && self.enabled:
 		grab_focus()
+
+#Become the current Interactor in use.
+func grab_focus() -> void:
+	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
 	
-#A different player interacted with a networked Interactable.
+#Pass the interactor signals we are listening to onwards.
+func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
+	emit_signal(signal_name, attribute)
+	
+#An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
+func on_interact_menu_request(interactable : Interactable)->void:
+	Log.trace(self, "", "Interacted with %s " %interactable)
+	if interactable.is_networked():
+		rpc_id(1, "request_interact", [interactor.get_path(), interactable.get_path()])
+		#I removed entity.owner_peer_id from the now empty array.
+	else :
+		interactor.interact(interactable)
+		
+master func request_interact(args : Array) -> void :
+	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
+	rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
+
 puppetsync func execute_interact(args: Array):
 	Log.warning(self, "", "Client %s interacted request executed" %entity.owner_peer_id)
 	var _interactor = get_node(args[0])
 	var _interactable = get_node(args[1])
 	_interactor.interact(_interactable)
-
-#Become the current Interactor in use.
-func grab_focus() -> void:
-	Signals.Hud.emit_signal(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self)
-
-#An Interactable has been chosen from InteractsMenu. Perform the appropriate logic for the Interactable.
-func on_interact_menu_request(interactable : Interactable)->void:
-	Log.trace(self, "", "Interacted with %s " %interactable)
-	if interactable.is_networked() and !get_tree().is_network_server():
-		crpc("request_interact", [interactor.get_path(), interactable.get_path()], [])
-		#I removed entity.owner_peer_id from the now empty array.
-	else :
-		interactor.interact(interactable)
-
-#Pass the interactor signals we are listening to onwards.
-func relay_signal(attribute = null, signal_name = "interactable_made_impossible") -> void :
-	emit_signal(signal_name, attribute)
-
-#Someone interacted with a networked Interactable.
-master func request_interact(args : Array) -> void :
-	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
-	crpc("execute_interact", args)
-
-#func rollback_focus():
-#	emit_signal(FOCUS_ROLLBACK)
 
 func disable():
 	$Interactor.enabled = false
@@ -78,4 +73,4 @@ func enable():
 		grab_focus()
 		$Interactor.enabled = true
 	.enable()
-	
+

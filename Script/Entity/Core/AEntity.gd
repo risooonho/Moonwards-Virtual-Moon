@@ -37,16 +37,17 @@ func disable() -> void:
 		comp.disable()
 	Log.trace(self, "disable", "Entity id:%s, name:%s has been disabled" 
 			%[entity_id, entity_name])
+	enabled = false
 	
 func enable() -> void:
 	for comp in components.values():
 		comp.enable()
 	Log.trace(self, "enable", "Entity id:%s, name:%s has been enabled" 
 			%[entity_id, entity_name])
+	enabled = true
 
 func set_enabled(val: bool) -> void:
 	if val:
 		enable()
 	else:
 		disable()
-	enabled = val

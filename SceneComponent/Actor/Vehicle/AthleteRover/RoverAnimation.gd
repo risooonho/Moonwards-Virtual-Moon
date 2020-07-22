@@ -26,11 +26,9 @@ func _init().("RoverAnimation", false):
 func _ready() -> void:
 	setup_movement()
 
-
-func _process_client(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for i in range(legs.size()):
 		legs[i].update(_delta)
-
 
 func setup_movement() -> void:
 	var ik_chains: Array = [
@@ -105,7 +103,6 @@ func setup_movement() -> void:
 			raise_anim_offset, lower_anim_offset, leg_lift_offset,
 			raise_anim_speed, lower_anim_speed, leg_lift_anim_speed)
 		)
-
 
 # Represents a procedural animated leg
 class Proc_Leg_Rover:

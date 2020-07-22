@@ -13,10 +13,24 @@ var anim_state: int = Anim_States.NONE
 # used by the animation_controller
 var wheels: Array = []
 
+#func _init():
+##	self.name = str(entity_data.peer_id)
+#	self.entity_name = self.name
+#	self.owner_peer_id = 1
+#	self.set_network_master(1)
+#	self.enable()
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	temporary hacks to only have certain parts of the rover enabled.
+	self.entity_name = self.name
+	#This isnt owned until someone rides it
+	self.owner_peer_id = -1
+	self.set_network_master(1)
+	self.enable()
+	self.get_component("Camera").camera.current = false
+	self.get_component("RoverInput").enabled = false
 	
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	wheels = [
 		$left_front_wheel,
 		$left_mid_wheel,

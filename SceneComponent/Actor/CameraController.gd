@@ -54,8 +54,6 @@ func _get_cam_normal() -> Vector3:
 	return camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5)
 	
 func disable():
-	if get_tree().get_network_unique_id() == entity.owner_peer_id:
-		camera.set_current(false)
 	.disable()
 
 func enable():

@@ -28,18 +28,23 @@ func take_control(e):
 	interactable.display_info = "Dismount the rover"
 	self.interactee = e
 	self.interactee.disable()
-	self.entity.enable()
-
+#	self.entity.enabled = true
+	self.entity.get_component("Camera").camera.current = true
+	self.entity.get_component("RoverInput").enabled = true
+	self.entity.owner_peer_id = get_tree().get_network_unique_id()
 	is_active = true
 	
 	.emit_signal("take_control")
 
 func return_control() -> void:
 	interactable.display_info = "Take control of the rover"
-	self.entity.disable()
+	self.entity.get_component("Camera").camera.current = false
+	self.entity.get_component("RoverInput").enabled = false
+	self.entity.owner_peer_id = -1
 	self.is_active = false
-	self.interactee.enable()
 	
+	self.interactee.enable()
+	self.interactee.get_component("Camera").camera.current = true
 	emit_signal("lose_control")
 
 func disable():

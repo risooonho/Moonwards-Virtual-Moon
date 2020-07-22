@@ -45,7 +45,7 @@ func update_walk_animation(_delta):
 	walk_direction = walk_direction.linear_interpolate(Vector2(-left_amount, forward_amount), _delta * 25.0)
 	entity.animation_tree.set("parameters/Walking/blend_position", walk_direction)
 
-func update_climb_animation(var delta):
+func update_climb_animation(_delta):
 	var kb_pos = entity.global_transform.origin
 	var climb_progress
 	

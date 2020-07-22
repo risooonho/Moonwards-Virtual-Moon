@@ -10,7 +10,7 @@ onready var model = $Model
 # Input vector
 master var input: Vector3 = Vector3.ZERO
 
-remote var look_dir: Vector3 = Vector3.FORWARD
+master var look_dir: Vector3 = Vector3.FORWARD
 
 # `PUPPET`
 # The world position of this entity on the server
@@ -25,15 +25,15 @@ puppet var velocity: float = 0.0
 func _process_server(_delta: float) -> void:
 	if !get_tree().network_peer:
 		return
-	rset_unreliable("srv_pos", srv_pos)
-	rset_unreliable("srv_basis", srv_basis)
-	rset_unreliable("velocity", velocity)
+	rset("srv_pos", srv_pos)
+	rset("srv_basis", srv_basis)
+	rset("velocity", velocity)
 	
 func _process_client(_delta: float) -> void:
-	if !get_tree().network_peer:
+	if !get_tree().network_peer || !enabled:
 		return
 	# This needs to be validated on the server side.
 	# Figure out a way to do that as godot doesn't have it out of the box
 	# Setgetters are an option, try to find a cleaner way.
 	if self.owner_peer_id == get_tree().get_network_unique_id():
-		rset_unreliable_id(1, "input", input)
+		rset_id(1, "input", input)

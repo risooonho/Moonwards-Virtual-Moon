@@ -2,8 +2,8 @@ extends AComponent
 
 signal jump_pressed
 
-func _init().("RoverInput", false):
-	pass
+func _init().("RoverInput", true):
+	self.enabled = false
 
 func _process_client(_delta: float) -> void:
 	handle_input()
