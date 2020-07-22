@@ -8,7 +8,6 @@ radius = 1.97071
 
 [node name="Interactor" type="Spatial"]
 script = ExtResource( 1 )
-comp_name = "PlayerInteractor"
 require_net_owner = true
 
 [node name="Interactor" type="Area" parent="."]

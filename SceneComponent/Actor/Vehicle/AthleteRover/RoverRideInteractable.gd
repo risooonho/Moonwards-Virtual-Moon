@@ -5,9 +5,6 @@ var interactee_cam
 
 var is_active = false
 
-signal take_control()
-signal lose_control()
-
 onready var interactable = $Interactable
 
 func _init().("RoverRideInteractable", false):
@@ -26,26 +23,28 @@ func interacted_by(e) -> void:
 
 func take_control(e):
 	interactable.display_info = "Dismount the rover"
-	self.interactee = e
-	self.interactee.disable()
+	interactee = e
+	interactee.disable()
 #	self.entity.enabled = true
-	self.entity.get_component("Camera").camera.current = true
-	self.entity.get_component("RoverInput").enabled = true
-	self.entity.owner_peer_id = get_tree().get_network_unique_id()
-	is_active = true
+	entity.get_component("Camera").camera.current = true
+	entity.get_component("RoverInput").enabled = true
+	entity.get_component("Interactor").grab_focus()
 	
-	.emit_signal("take_control")
+	entity.owner_peer_id = get_tree().get_network_unique_id()
+	is_active = true
+	interactable.is_available = false
 
 func return_control() -> void:
 	interactable.display_info = "Take control of the rover"
-	self.entity.get_component("Camera").camera.current = false
-	self.entity.get_component("RoverInput").enabled = false
-	self.entity.owner_peer_id = -1
-	self.is_active = false
+	entity.get_component("Camera").camera.current = false
+	entity.get_component("RoverInput").enabled = false
+	entity.owner_peer_id = -1
+	is_active = false
+	interactable.is_available = true
 	
-	self.interactee.enable()
-	self.interactee.get_component("Camera").camera.current = true
-	emit_signal("lose_control")
+	interactee.enable()
+	interactee.get_component("Interactor").grab_focus()
+	interactee.get_component("Camera").camera.current = true
 
 func disable():
 	pass
