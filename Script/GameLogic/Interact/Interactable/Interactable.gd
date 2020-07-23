@@ -16,6 +16,8 @@ export var display_info : String = "Interactable"
 export var title : String = "Title"
 #True means that players online can see the interactable be used by others.
 export var networked : bool = true
+# Whether or not this interactable is available  to receive interactions.
+var is_available: bool = true
 
 var owning_entity: AEntity = null
 

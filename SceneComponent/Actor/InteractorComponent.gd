@@ -50,11 +50,11 @@ func on_interact_menu_request(interactable : Interactable)->void:
 	Log.trace(self, "", "Interacted with %s " %interactable)
 	if interactable.is_networked():
 		rpc_id(1, "request_interact", [interactor.get_path(), interactable.get_path()])
-		#I removed entity.owner_peer_id from the now empty array.
-	else :
-		interactor.interact(interactable)
+#		#I removed entity.owner_peer_id from the now empty array.
+#	else :
+#		interactor.interact(interactable)
 		
-master func request_interact(args : Array) -> void :
+mastersync func request_interact(args : Array) -> void :
 	Log.warning(self, "", "Client %s requested an interaction" %entity.owner_peer_id)
 	rpc_id(get_tree().get_rpc_sender_id(), "execute_interact", args)
 
