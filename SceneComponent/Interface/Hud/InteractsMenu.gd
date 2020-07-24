@@ -15,7 +15,7 @@ var interactor_history_pointers : Array = []
 
 #Listen for when interacts are possible.
 func _ready() -> void :
-	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor_append_to_history")
+	Signals.Hud.connect(Signals.Hud.NEW_INTERACTOR_GRABBED_FOCUS, self, "_new_interactor")
 
 #Called from a signal. One of the buttons corresponding to the interactables has been pressed.
 func _button_pressed(interactable : Node) -> void :
@@ -77,10 +77,30 @@ func _input(event : InputEvent) -> void :
 			Helpers.capture_mouse(false)
 			visible = true
 
+#Called from Interactable signal. Update a buttons display text.
+func _interactable_display_info_changed(new_display_info : String, button : Button) -> void :
+	button.disconnect("mouse_entered", self, "_display_button_info")
+	button.disconnect("focus_entered", self, "_display_button_info")
+	button.connect("mouse_entered", self, "_display_button_info", [new_display_info])
+	button.connect("focus_entered", self, "_display_button_info", [new_display_info])
+	
+	#Update the info display if the button has focus.
+	if button.has_focus() :
+		description.text = new_display_info
+
 #Called from a signal. Adds a button to the button list based on the interactable.
 func _interactable_entered(interactable_node) -> void :
+	#Check that the Interctable is not already listed.
+	for array in button_relations :
+		if array[0] == interactable_node :
+			return
+	
 	var button : Button = _create_button(interactable_node.get_title(), interactable_node.get_info(), interactable_node)
 	button_relations.append([interactable_node, button])
+	
+	#Listen for when Interactable attributes have been changed.
+	interactable_node.connect("display_info_changed", self, "_interactable_display_info_changed", [button])
+	interactable_node.connect("title_changed", self, "_interactable_title_changed", [button])
 
 #Called from a signal. Remove the button corresponding to the interactable from the button list.
 func _interactable_left(interactable_node) -> void :
@@ -101,6 +121,10 @@ func _interactable_left(interactable_node) -> void :
 		elif button_parent.get_child_count() >= 4 :
 			button_parent.get_child(3).grab_focus()
 	
+	#Stop listening to the Interactables signals.
+	interactable_node.disconnect("display_info_changed", self, "_interactable_display_info_changed")
+	interactable_node.disconnect("title_changed", self, "_interactable_title_changed")
+	
 	#Remove the button from the scene tree.
 	_free_button(button)
 	
@@ -110,6 +134,9 @@ func _interactable_left(interactable_node) -> void :
 	#Clear the text description if there are no more interactables.
 	if button_relations.empty() :
 		description.text = ""
+
+func _interactable_title_changed(new_title : String, button : Button) -> void :
+	button.text = new_title
 
 #Called from a signal. Disconnect the old interactor and connect the new one.
 func _new_interactor(new_interactor : Node) -> void :
@@ -124,19 +151,15 @@ func _new_interactor(new_interactor : Node) -> void :
 	interactor_component = new_interactor
 
 #A new InteractorComponent has grabbed focus.
-func _new_interactor_append_to_history(new_interactor : Node) -> void :
-	_new_interactor(new_interactor)
-	
-	#Listen for when the interactor has been freed so we don't crash the game
-	#by trying to call it after.
-	new_interactor.connect("tree_exited", self, "interactor_freed", [new_interactor.get_instance_id()])
-	
-	interactor_history.append(new_interactor.get_instance_id())
-	interactor_history_pointers.append(new_interactor)
-
-#Called from a signal. Set the freed interactor contained in the history to null.
-func interactor_freed(interactor_instance_id : int) -> void :
-	interactor_history[interactor_history.find(interactor_instance_id)] = null
+#func _new_interactor_append_to_history(new_interactor : Node) -> void :
+#	_new_interactor(new_interactor)
+#
+#	#Listen for when the interactor has been freed so we don't crash the game
+#	#by trying to call it after.
+#	new_interactor.connect("tree_exited", self, "interactor_freed", [new_interactor.get_instance_id()])
+#
+#	interactor_history.append(new_interactor.get_instance_id())
+#	interactor_history_pointers.append(new_interactor)
 
 #Move the focus to the latest valid InteractorComponent.
 #func _rollback_interactor_focus() -> void :
