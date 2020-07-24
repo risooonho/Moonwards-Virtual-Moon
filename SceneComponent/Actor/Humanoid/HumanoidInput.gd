@@ -22,14 +22,14 @@ func handle_input() -> void:
 		entity.input.y += 1
 		
 	if Input.is_action_pressed("move_forwards"):
-		entity.input += entity.transform.basis.z
+		entity.input.z += 1
 	elif Input.is_action_pressed("move_backwards"):
-		entity.input += -entity.transform.basis.z
+		entity.input.z += -1
 		
 	if Input.is_action_pressed("move_left"):
-		entity.input += entity.transform.basis.x
+		entity.input.x += 1
 	elif Input.is_action_pressed("move_right"):
-		entity.input += -entity.transform.basis.x 
+		entity.input.x += -1
 
 func set_ignore_inputs(ignore_bool : bool) -> void :
 	ignore_inputs = ignore_bool

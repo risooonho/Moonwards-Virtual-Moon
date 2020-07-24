@@ -206,4 +206,4 @@ func rotate_body(_delta: float) -> void:
 		var o = entity.global_transform.origin
 		var t = entity.look_dir
 		var theta = atan2(o.x - t.x, o.z - t.z)
-		entity.model.set_rotation(Vector3(0, theta, 0))
+		entity.set_rotation(Vector3(0, theta, 0))

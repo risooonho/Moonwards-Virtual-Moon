@@ -35,7 +35,7 @@ func _process(_delta: float) -> void:
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		var mouse_vec : Vector2 = event.get_relative()		
+		var mouse_vec : Vector2 = event.get_relative()
 		yaw = fmod(yaw - mouse_vec.x * mouse_sensitivity, 360.0)
 		pitch = max(min(pitch - mouse_vec.y * mouse_sensitivity , max_pitch), -max_pitch)
 

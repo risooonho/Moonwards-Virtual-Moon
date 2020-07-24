@@ -29,6 +29,9 @@ func disable() -> void:
 	Log.trace(self, "disable", "Component %s has been disabled" %comp_name)
 	
 func enable() -> void:
+	if !is_net_owner() and require_net_owner:
+		disable()
+		return
 	enabled = true
 	set_process(true)
 	set_physics_process(true)
