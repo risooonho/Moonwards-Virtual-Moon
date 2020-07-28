@@ -74,7 +74,7 @@ networked = true
 stairs_step_count = 18
 generate_editor_visual = false
 
-[node name="Marker_Vertical-Stairs002" parent="." index="15"]
+[node name="Marker_Vertical-Stairs002" parent="." index="12"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
@@ -217,8 +217,8 @@ networked = true
 stairs_step_count = 19
 generate_editor_visual = false
 
-[node name="LOD1" parent="." index="24"]
+[node name="LOD1" parent="." index="21"]
 visible = false
 
-[node name="LOD2" parent="." index="25"]
+[node name="LOD2" parent="." index="22"]
 visible = false
