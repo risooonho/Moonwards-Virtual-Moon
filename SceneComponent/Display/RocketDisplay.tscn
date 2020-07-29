@@ -1033,7 +1033,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="SpatialMaterial" id=9]
-params_cull_mode = 2
 albedo_color = Color( 0, 0, 0, 0.95 )
 metallic = 0.31
 roughness = 0.28
@@ -1041,6 +1040,7 @@ transmission_enabled = true
 transmission = Color( 0.556863, 0.552941, 0.552941, 1 )
 
 [sub_resource type="SpatialMaterial" id=10]
+flags_no_depth_test = true
 albedo_color = Color( 0.494118, 0.494118, 0.494118, 1 )
 
 [sub_resource type="Animation" id=11]
@@ -1284,7 +1284,7 @@ stream = ExtResource( 8 )
 unit_db = -30.0
 
 [node name="Rocket" parent="Controller" instance=ExtResource( 5 )]
-transform = Transform( 0.75, 0, 0, 0, -3.27835e-08, -0.75, 0, 0.75, -3.27835e-08, 0, 10, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, 0 )
 
 [node name="AnimationPlayer" parent="Controller/Rocket/RocketBody/PYBB_Nozzle_Opt" index="0"]
 anims/NozzleOpen = SubResource( 8 )
@@ -1293,7 +1293,7 @@ anims/NozzleOpen = SubResource( 8 )
 material/0 = SubResource( 9 )
 
 [node name="ThrustFanBlades_Opt" parent="Controller/Rocket/RocketBody" index="2"]
-transform = Transform( 0.295811, 0, 0.955246, 0, 1, 0, -0.955246, 0, 0.295811, 3.63588e-06, -1.8605, -2.38419e-07 )
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 3.63588e-06, -1.8605, -2.38419e-07 )
 material_override = SubResource( 10 )
 
 [node name="AnimationPlayer" parent="Controller/Rocket/RocketBody/ThrustFanBlades_Opt" index="0"]
@@ -1312,7 +1312,7 @@ visible = false
 omni_range = 0.5
 
 [node name="Particles" type="Particles" parent="Controller/Rocket"]
-transform = Transform( 1, 0, 4.37115e-08, 4.37114e-08, -1.19209e-07, -1, 7.10543e-15, 1, -1.19209e-07, -3.62457e-08, 9.47755, 0.348624 )
+transform = Transform( 1, -1.89464e-15, 8.28172e-23, 0, -4.37114e-08, -1, 1.89464e-15, 1, -4.37114e-08, -3.62457e-08, 9.47755, 0.348624 )
 material_override = SubResource( 14 )
 cast_shadow = 0
 emitting = false
