@@ -114,7 +114,7 @@ func _interactable_left(interactable_node) -> void :
 		at += 1
 	
 	#If this crashes, it is because something went wrong with the button relations creation.
-w	if button.has_focus() && button_parent.get_child_count() > 1 :
+	if button.has_focus() && button_parent.get_child_count() > 1 :
 		if button_parent.get_child(1).has_focus() == false :
 			button_parent.get_child(1).grab_focus()
 		elif button_parent.get_child_count() >= 4 :

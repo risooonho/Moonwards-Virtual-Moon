@@ -219,10 +219,10 @@ stairs_step_count = 19
 generate_editor_visual = false
 
 [node name="Marker_Rocket_Display" parent="." index="21"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5266, -15.5306, -1.94232 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4549, -15.5153, -1.94232 )
 
 [node name="RocketDisplay" parent="Marker_Rocket_Display" index="0" instance=ExtResource( 5 )]
-transform = Transform( -1.62921e-06, 0, 10, 0, 10, 0, -10, 0, -1.62921e-06, -2.78777, -1.51126, -0.960511 )
+transform = Transform( -1.62921e-06, 0, 10, 0, 10, 0, -10, 0, -1.62921e-06, 0, 0, 0 )
 
 [node name="LOD1" parent="." index="22"]
 visible = false
