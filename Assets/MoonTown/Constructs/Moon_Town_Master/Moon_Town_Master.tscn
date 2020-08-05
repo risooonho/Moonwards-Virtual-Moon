@@ -61,7 +61,6 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
 [ext_resource path="res://Tree/Actor/Vehicle/AthleteRover/AthleteRover.tscn" type="PackedScene" id=62]
-[ext_resource path="res://default_env.tres" type="Environment" id=62]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 108.19, 109.38, 110.021 )
