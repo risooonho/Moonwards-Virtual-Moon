@@ -12,15 +12,16 @@ export(float) var stair_bottom_length
 export(float) var stair_width
 export(int) var stairs_step_count
 
-export(bool) var generate_editor_visual setget test_in_editor
+export(bool) var generate_editor_visual = false setget test_in_editor
 
 var _total_length: float = 0.0
 
 func _ready():
-	generate_stairs()
-	update_collision()
 	#Listen to when I am interacted with.
 	connect("interacted_by", self, "interacted_with")
+	generate_stairs()
+	if is_inside_tree():
+		update_collision()
 
 #Let the interactor know they interacted with me.
 func interacted_with(_interactor : Node) -> void :
@@ -75,12 +76,16 @@ func update_collision():
 			break
 
 func test_in_editor(_val):
-	for n in self.get_children():
-		if n != $CollisionShape:
-			self.remove_child(n)
-			n.queue_free()
-	generate_stairs()
-	update_collision()
+	if _val:
+		for n in self.get_children():
+			if n != $CollisionShape:
+				self.remove_child(n)
+				n.queue_free()
+		generate_stairs()
+		update_collision()
+		generate_editor_visual = _val
+	else:
+		generate_editor_visual = _val
 
 func _create_debug_line(var from, var to):
 	var im = ImmediateGeometry.new()
