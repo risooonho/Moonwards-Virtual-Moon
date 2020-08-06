@@ -9,12 +9,12 @@
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/Color = Color( 0.666667, 0.647059, 0.619608, 1 )
-shader_param/UVScale = Vector3( 100, 100, 1 )
+shader_param/Color = Color( 0.886275, 0.886275, 0.886275, 1 )
+shader_param/UVScale = Vector3( 200, 200, 1 )
 shader_param/UVScale_Far = Vector3( 1, 1, 1 )
-shader_param/Color_Far = Color( 0.666667, 0.647059, 0.619608, 1 )
+shader_param/Color_Far = Color( 0.886275, 0.886275, 0.886275, 1 )
 shader_param/DistanceLerp = 750.0
-shader_param/DistanceSmooth = 200.0
+shader_param/DistanceSmooth = 150.0
 shader_param/Metallic = null
 shader_param/Metallic_Far = null
 shader_param/Specular = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=2]
+[gd_scene load_steps=147 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.tscn" type="PackedScene" id=2]
@@ -62,6 +62,10 @@
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-4.ogg" type="AudioStream" id=60]
 [ext_resource path="res://Assets/Sounds/Audio_Tour/Audio_Tour_Indoor-11.ogg" type="AudioStream" id=61]
 [ext_resource path="res://default_env.tres" type="Environment" id=62]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Cube.mesh" type="ArrayMesh" id=63]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Lalande_Surface_Moontown_Shader.tres" type="Material" id=64]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/TestCubeMaterials.glb" type="PackedScene" id=66]
+[ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/TestCubeMaterials.tscn" type="PackedScene" id=67]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 108.19, 109.38, 110.021 )
@@ -307,7 +311,7 @@ extents = Vector3( 2.15067, 2.19388, 2.6153 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="0"]
 transform = Transform( -0.0784592, -0.498459, -0.863356, 0, -0.866025, 0.5, -0.996917, 0.0392296, 0.0679476, 0, 300, 0 )
-light_color = Color( 0.972549, 0.945098, 0.882353, 1 )
+light_color = Color( 1, 0.988235, 0.964706, 1 )
 light_energy = 2.07
 shadow_enabled = true
 shadow_color = Color( 0.498039, 0.498039, 0.498039, 1 )
@@ -907,6 +911,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4170.9, -420.808, -6138.28 )
 display_info = "play outdoor audio tour 11"
 audio_file = ExtResource( 55 )
 
+[node name="Lalande_MoonTown" parent="." index="30"]
+material_override = ExtResource( 64 )
+cast_shadow = 0
+
 [node name="Lalande_MoonTown2" parent="." index="31"]
 visible = false
 
@@ -1268,7 +1276,6 @@ __meta__ = {
 energy = 2.8
 propagation = 0.5
 bias = 1.112
-interior = true
 
 [node name="ReflectionProbe" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="1"]
 intensity = 0.22
@@ -1473,6 +1480,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="MainHangarsGrounds" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/LOD0" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -277.591, -17.8624, 242.067 )
+
 [node name="Empty_NorthLongAtrium" parent="Marker_all_Constructs" index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1102, 57.8899, -326.097 )
 
@@ -1646,6 +1656,17 @@ visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="52"]
 environment = ExtResource( 62 )
+
+[node name="TestCubeMaterials" parent="." index="53" instance=ExtResource( 66 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 766.13, 117.591, 352.3 )
+
+[node name="TestCubeMaterials" parent="TestCubeMaterials" index="1" instance=ExtResource( 67 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62012, 1.84827, -1.06499 )
+
+[node name="Cube" type="MeshInstance" parent="." index="54"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 764.7, 126.164, 375.465 )
+mesh = ExtResource( 63 )
+material/0 = null
 
 [editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor/Molten_Soil_Reactor"]
 
