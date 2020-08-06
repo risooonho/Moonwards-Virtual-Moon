@@ -1273,7 +1273,7 @@ __meta__ = {
 [node name="First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="0" instance=ExtResource( 10 )]
 
 [node name="GIProbe" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="0"]
-energy = 2.8
+energy = 1.53
 propagation = 0.5
 bias = 1.112
 
@@ -1288,9 +1288,6 @@ interior_ambient_contrib = 0.05
 
 [node name="OmniLight" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="2"]
 light_energy = 0.24
-
-[node name="Screen" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument" index="1"]
-hologram = false
 
 [node name="ReversingVisibilityTrigger" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="11" instance=ExtResource( 39 )]
 show_lod1_list = [ NodePath("../../../../Marker_all_MIPs/Marker_MIP001/Melt_In_Place_Station"), NodePath("../../../../Marker_all_MIPs/Marker_MIP/Melt_In_Place_Station"), NodePath("../../../../Athlete_Rover_Prop"), NodePath("../../../../Athlete_Rover_Prop2"), NodePath("../../../../Athlete_Rover_Prop/Ground_Passenger_Pod"), NodePath("../../../../Marker_all_BoatRads/BoatRad/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad018/Boat_Radiator"), NodePath("../../../../Marker_all_BoatRads/BoatRad017/Boat_Radiator"), NodePath("../../../Empty_FirstHangars/First_Factory"), NodePath("../../../Empty_FirstHangars/First_Factory/Markers/Empty_SpiderCrane/Spider_Crane") ]
@@ -1335,6 +1332,9 @@ shape = SubResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Screen" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper/Marker_MakersMonument/MakersMonument" index="1"]
+hologram = false
 
 [node name="DVT_First_Gallery_Upper" parent="Marker_all_Constructs/Empty_FirstGalleryUpper" index="1" instance=ExtResource( 38 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2718, -17.7215, -17.284 )

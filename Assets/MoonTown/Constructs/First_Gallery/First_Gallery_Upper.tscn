@@ -9,12 +9,12 @@
 bounds = AABB( -162.469, -61.685, -31.646, 324.938, 123.37, 63.292 )
 cell_size = 2.53858
 to_cell_xform = Transform( 0.393921, 0, 0, 0, 0.393921, 0, 0, 0, 0.393921, 64, 24.299, 12.466 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 6881394, 0, 0, 7, 0, 1, 1952, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 1, 3802, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
-energy = 2.8
-bias = 1.112
+energy = 1.48
+bias = 1.5
 normal_bias = 0.0
-propagation = 0.5
+propagation = 0.69
 interior = true
 
 [node name="First_Gallery_Upper" instance=ExtResource( 1 )]
@@ -22,14 +22,14 @@ interior = true
 [node name="GIProbe" type="GIProbe" parent="." index="0"]
 transform = Transform( 0.84363, -0.527727, -0.0989545, 0.524134, 0.849414, -0.0614788, 0.116497, -2.01372e-08, 0.993191, -75.8622, -69.1606, -9.28101 )
 extents = Vector3( 162.469, 61.685, 31.646 )
-energy = 0.85
+energy = 1.48
 propagation = 0.69
 interior = true
 data = SubResource( 1 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1"]
 transform = Transform( 0.817726, -0.562646, -0.121466, 0.55654, 0.826698, -0.0826691, 0.146929, 5.0331e-08, 0.989147, -80.7334, -73.5646, -6.82185 )
-intensity = 0.38
+intensity = 0.35
 max_distance = 15.0
 extents = Vector3( 159.824, 61.4228, 27.7402 )
 origin_offset = Vector3( -2.23517e-10, 0, 0 )
@@ -37,25 +37,51 @@ box_projection = true
 enable_shadows = true
 
 [node name="OmniLight" type="OmniLight" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.09355, 0 )
-light_energy = 1.37
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514722, 4.09355, 0 )
+light_color = Color( 0.635294, 0.909804, 0.74902, 1 )
+light_energy = 0.16
+light_specular = 0.26
 omni_range = 71.4
 omni_attenuation = 1.7411
 
-[node name="OmniLight2" type="OmniLight" parent="." index="3"]
+[node name="OmniLight5" type="OmniLight" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7064, 2.69873, 5.73059 )
+light_color = Color( 0.635294, 0.909804, 0.74902, 1 )
+light_energy = 0.3
+light_specular = 0.26
+omni_range = 31.6
+omni_attenuation = 1.7411
+
+[node name="OmniLight6" type="OmniLight" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.703, 2.69873, -4.75157 )
+light_color = Color( 0.635294, 0.909804, 0.74902, 1 )
+light_energy = 0.3
+light_specular = 0.26
+omni_range = 25.7
+omni_attenuation = 1.7411
+
+[node name="OmniLight2" type="OmniLight" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3683, -48.5825, 0 )
-light_energy = 1.37
+light_color = Color( 0.168627, 0.619608, 0.513726, 1 )
+light_energy = 0.19
+light_specular = 0.0
 omni_range = 71.4
 omni_attenuation = 1.7411
 
-[node name="OmniLight3" type="OmniLight" parent="." index="4"]
+[node name="OmniLight3" type="OmniLight" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.482, -83.2461, -9.92936 )
-light_energy = 1.37
+light_color = Color( 0.231373, 0.501961, 0.886275, 1 )
+light_energy = 0.06
+light_indirect_energy = 0.74
+light_specular = 0.0
 omni_range = 71.4
 omni_attenuation = 1.7411
 
-[node name="OmniLight4" type="OmniLight" parent="." index="5"]
+[node name="OmniLight4" type="OmniLight" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0639, -55.9659, 0.0796747 )
+light_color = Color( 0.631373, 0.729412, 0.580392, 1 )
+light_energy = 0.48
+light_specular = 0.0
 omni_range = 30.8064
 omni_attenuation = 1.8025
 
@@ -70,7 +96,7 @@ stairs_step_count = 18
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 18
 
-[node name="Marker_Vertical-Stairs002" parent="." index="12"]
+[node name="Marker_Vertical-Stairs002" parent="." index="14"]
 transform = Transform( 0.0777978, 0, 0.996969, 0, 1, 0, -0.996969, 0, 0.0777978, 35.2925, -17.2804, -2.95547 )
 
 [node name="Vertical-Stairs-2a" parent="Marker_Vertical-Stairs002" index="0" instance=ExtResource( 4 )]
@@ -141,8 +167,8 @@ stairs_step_count = 20
 transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 1.07, 0, 0 )
 stairs_step_count = 19
 
-[node name="LOD1" parent="." index="21"]
+[node name="LOD1" parent="." index="23"]
 visible = false
 
-[node name="LOD2" parent="." index="22"]
+[node name="LOD2" parent="." index="24"]
 visible = false
