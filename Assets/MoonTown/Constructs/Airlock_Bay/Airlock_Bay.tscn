@@ -3,13 +3,11 @@
 [ext_resource path="res://Assets/MoonTown/Constructs/Airlock_Bay/Airlock_Bay.glb" type="PackedScene" id=1]
 [ext_resource path="res://SceneComponent/Object/Airlock/Airlock.tscn" type="PackedScene" id=2]
 
-
-
 [sub_resource type="GIProbeData" id=1]
-bounds = AABB( -149.574, -14.3202, -64.1254, 299.148, 28.6404, 128.251 )
-cell_size = 2.33709
-to_cell_xform = Transform( 0.427882, 0, 0, 0, 0.427882, 0, 0, 0, 0.427882, 64, 6.12735, 27.4381 )
-dynamic_data = PoolIntArray( 0, 8, 128, 16, 64, 1, 0, 1167644294, -1084697077, 1029814795, -1090037483, 1122895821, -1093919248, 1063785070, 1041113830, 1114535157, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -90.8923, -14.3202, -27.6605, 181.785, 28.6404, 55.321 )
+cell_size = 2.84038
+to_cell_xform = Transform( 0.352065, 0, 0, 0, 0.352065, 0, 0, 0, 0.352065, 32, 5.04164, 9.7383 )
+dynamic_data = PoolIntArray( 0, 7, 64, 16, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 9, 3417, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 8
 bias = 1.5
 normal_bias = 0.0
@@ -43,8 +41,9 @@ omni_range = 26.0
 omni_attenuation = 1.6245
 
 [node name="GIProbe" type="GIProbe" parent="." index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0059, 0.707192, -0.259207 )
-extents = Vector3( 149.574, 14.3202, 64.1254 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8261, 0.707192, -0.259207 )
+subdiv = 0
+extents = Vector3( 90.8923, 14.3202, 27.6605 )
 dynamic_range = 8
 propagation = 0.2
 interior = true

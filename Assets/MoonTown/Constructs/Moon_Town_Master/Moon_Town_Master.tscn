@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=152 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/Moon_Town_Master/Moon_Town_Master.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Lower_UpperPart.tscn" type="PackedScene" id=2]
@@ -308,6 +308,39 @@ extents = Vector3( 322.877, 170.718, 492.525 )
 
 [sub_resource type="BoxShape" id=80]
 extents = Vector3( 2.15067, 2.19388, 2.6153 )
+
+[sub_resource type="GIProbeData" id=81]
+bounds = AABB( -61.0433, -39.472, -104.529, 122.087, 78.9439, 209.058 )
+cell_size = 3.26652
+to_cell_xform = Transform( 0.306136, 0, 0, 0, 0.306136, 0, 0, 0, 0.306136, 18.6875, 12.0838, 32 )
+dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, -1032573874, 0, 0, 0, 0, 0, 1114909774, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+energy = 0.13
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
+
+[sub_resource type="GIProbeData" id=82]
+bounds = AABB( -61.0433, -39.472, -104.529, 122.087, 78.9439, 209.058 )
+cell_size = 3.26652
+to_cell_xform = Transform( 0.306136, 0, 0, 0, 0.306136, 0, 0, 0, 0.306136, 18.6875, 12.0838, 32 )
+dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, 1094713344, 0, 0, 0, 0, 0, 24, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+energy = 0.13
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
+
+[sub_resource type="GIProbeData" id=83]
+bounds = AABB( -24.2283, -41.6228, -45.3802, 48.4566, 83.2457, 90.7605 )
+cell_size = 1.41813
+to_cell_xform = Transform( 0.705153, 0, 0, 0, 0.705153, 0, 0, 0, 0.705153, 17.0847, 29.3505, 32 )
+dynamic_data = PoolIntArray( 0, 7, 64, 64, 64, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+energy = 0.13
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
 
 [node name="Moon_Town_Master" instance=ExtResource( 1 )]
 
@@ -1285,7 +1318,7 @@ bias = 1.112
 [node name="ReflectionProbe" parent="Marker_all_Constructs/Empty_FirstGalleryUpper/First_Gallery_Upper" index="1"]
 intensity = 0.22
 max_distance = 9.4
-extents = Vector3( 151.396, 61.4228, 27.7402 )
+extents = Vector3( 151.396, 55.9343, 27.7402 )
 interior_enable = true
 interior_ambient_color = Color( 0.74902, 0.976471, 0.772549, 1 )
 interior_ambient_energy = 0.35
@@ -1694,6 +1727,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62012, 1.84827, -1.06499 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 764.7, 126.164, 375.465 )
 mesh = ExtResource( 63 )
 material/0 = null
+
+[node name="GIProbe" type="GIProbe" parent="." index="55"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 211.997, 103.008, 180.969 )
+subdiv = 0
+extents = Vector3( 61.0433, 39.472, 104.529 )
+energy = 0.13
+data = SubResource( 81 )
+
+[node name="GIProbe2" type="GIProbe" parent="." index="56"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.4787, 103.008, 180.969 )
+subdiv = 0
+extents = Vector3( 61.0433, 39.472, 104.529 )
+energy = 0.13
+data = SubResource( 82 )
+
+[node name="GIProbe3" type="GIProbe" parent="." index="57"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3638, 72.2814, 59.109 )
+subdiv = 0
+extents = Vector3( 24.2283, 41.6228, 45.3802 )
+energy = 0.13
+data = SubResource( 83 )
 
 [editable path="Marker_all_MoltenSoilReactors/Marker_MoltenSoilReactor/Molten_Soil_Reactor"]
 

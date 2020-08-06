@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/MoonTown/Constructs/First_Gallery/First_Gallery_Upper.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/MoonTown/Models/Carousel/Carousel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SceneComponent/Display/MakersMonument/MonumentDisplay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SceneComponent/Utilities/VerticalStairs/VerticalStairs.tscn" type="PackedScene" id=4]
+[ext_resource path="res://default_env_indoors.tres" type="Environment" id=5]
 
 [sub_resource type="GIProbeData" id=1]
-bounds = AABB( -162.469, -61.685, -31.646, 324.938, 123.37, 63.292 )
-cell_size = 2.53858
-to_cell_xform = Transform( 0.393921, 0, 0, 0, 0.393921, 0, 0, 0, 0.393921, 64, 24.299, 12.466 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 0, 0, 0, 7, 0, 1, 3802, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -146.966, -51.657, -19.7606, 293.933, 103.314, 39.5213 )
+cell_size = 2.29635
+to_cell_xform = Transform( 0.435474, 0, 0, 0, 0.435474, 0, 0, 0, 0.435474, 64, 22.4953, 8.60524 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 32, 1, 0, 0, 0, 1056964608, 0, 0, 0, 0, 0, 1056964608, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 energy = 1.48
 bias = 1.5
@@ -20,8 +21,8 @@ interior = true
 [node name="First_Gallery_Upper" instance=ExtResource( 1 )]
 
 [node name="GIProbe" type="GIProbe" parent="." index="0"]
-transform = Transform( 0.84363, -0.527727, -0.0989545, 0.524134, 0.849414, -0.0614788, 0.116497, -2.01372e-08, 0.993191, -75.8622, -69.1606, -9.28101 )
-extents = Vector3( 162.469, 61.685, 31.646 )
+transform = Transform( 0.832528, -0.543142, -0.10906, 0.541341, 0.839426, -0.0481008, 0.117674, -0.0189936, 0.992871, -77.7004, -68.9083, -9.64462 )
+extents = Vector3( 146.966, 51.657, 19.7606 )
 energy = 1.48
 propagation = 0.69
 interior = true
@@ -172,3 +173,6 @@ visible = false
 
 [node name="LOD2" parent="." index="24"]
 visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="25"]
+environment = ExtResource( 5 )
