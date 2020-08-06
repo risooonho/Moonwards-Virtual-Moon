@@ -29,7 +29,7 @@ operator = 2
 [sub_resource type="VisualShaderNodeScalarInterp" id=10]
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=11]
-uniform_name = "Rough_AO_"
+uniform_name = "Rough_AO"
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeTextureUniform" id=12]
@@ -106,7 +106,7 @@ uniform float DistanceLerp;
 uniform float DistanceSmooth;
 uniform float Metallic;
 uniform float Metallic_Far;
-uniform sampler2D Rough_AO_ : hint_albedo;
+uniform sampler2D Rough_AO : hint_albedo;
 uniform sampler2D Rough_AO_Far : hint_albedo;
 uniform float Specular;
 uniform float Specular_Far;
@@ -201,7 +201,7 @@ void fragment() {
 	vec3 n_out20p0;
 	float n_out20p1;
 	{
-		vec4 n_tex_read = texture(Rough_AO_, n_out10p0.xy);
+		vec4 n_tex_read = texture(Rough_AO, n_out10p0.xy);
 		n_out20p0 = n_tex_read.rgb;
 		n_out20p1 = n_tex_read.a;
 	}
@@ -276,7 +276,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1421, 62 )
+graph_offset = Vector2( -2027, 212 )
 nodes/fragment/0/position = Vector2( -200, 200 )
 nodes/fragment/3/node = SubResource( 21 )
 nodes/fragment/3/position = Vector2( -2000, 380 )

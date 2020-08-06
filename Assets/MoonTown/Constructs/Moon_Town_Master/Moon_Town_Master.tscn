@@ -1374,6 +1374,12 @@ __meta__ = {
 [node name="Empty_PressurizedHangar001" parent="Marker_all_Constructs/Empty_FirstHangars/First_Factory/Markers" index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.812, 31.99, 27.747 )
 
+[node name="HangarFoundationSmall001" parent="Marker_all_Constructs/Empty_FirstHangars/First_Factory/LOD1" index="1"]
+visible = false
+
+[node name="HangarFoundationSmall002" parent="Marker_all_Constructs/Empty_FirstHangars/First_Factory/LOD2" index="1"]
+visible = false
+
 [node name="RVT_First_Factory_LOD0" parent="Marker_all_Constructs/Empty_FirstHangars" index="1" instance=ExtResource( 39 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.313, 0, -70.9816 )
 show_lod0_list = [ NodePath(".."), NodePath("../First_Factory/Markers/Empty_TowerRadiator2x001/TowerRadiator_2x"), NodePath("../First_Factory/Markers/Empty_TowerRadiator2x002/TowerRadiator_2x"), NodePath("../First_Factory/Markers/Empty_TowerRadiator2x003/TowerRadiator_2x"), NodePath("../First_Factory/Markers/Empty_TowerRadiator2x004/TowerRadiator_2x"), NodePath("../First_Factory/Markers/Empty_PressurizedHangar/PressurizedHangar_Regular") ]
@@ -1482,6 +1488,12 @@ __meta__ = {
 
 [node name="MainHangarsGrounds" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/LOD0" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -277.591, -17.8624, 242.067 )
+
+[node name="MainHangarsGrounds001" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/LOD1" index="2"]
+visible = false
+
+[node name="MainHangarsGrounds002" parent="Marker_all_Constructs/Empty_MainHangars/Main_Factory/LOD2" index="2"]
+visible = false
 
 [node name="Empty_NorthLongAtrium" parent="Marker_all_Constructs" index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.1102, 57.8899, -326.097 )

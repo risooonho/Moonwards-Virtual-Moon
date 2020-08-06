@@ -21,6 +21,6 @@ shader_param/Specular = 0.5
 shader_param/Specular_Far = 0.5
 shader_param/Albedo = ExtResource( 5 )
 shader_param/Albedo_Far = ExtResource( 6 )
-shader_param/Rough_AO_ = ExtResource( 4 )
+shader_param/Rough_AO = ExtResource( 4 )
 shader_param/NormalMap = ExtResource( 3 )
 shader_param/NormalMap_Far = ExtResource( 2 )
